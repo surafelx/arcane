@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arcane Technologies PLC - Digital Financial Services & Distribution in Ethiopia. CBE Birr Super Agent, Safaricom Partner, FMCG Distribution, Telecom Products.">
+    <title>Arcane Technologies PLC - Digital Financial Services & Distribution</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #0a1628;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0a1628 100%);
+        }
+        .logo-section { margin-bottom: 30px; }
+        .logo-section svg { max-width: 280px; height: auto; }
+        .tagline {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #52bbaD;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+        h1 span { color: #52bbaD; }
+        .subtitle {
+            font-size: clamp(16px, 2.5vw, 20px);
+            color: #a0b4c8;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 900px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(82,187,173,0.3);
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-align: left;
+        }
+        .service-card h3 {
+            color: #52bbaD;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            font-size: 14px;
+            color: #a0b4c8;
+            line-height: 1.6;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .btn-primary {
+            background: #52bbaD;
+            color: #0a1628;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover { background: #3d9e91; }
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: border-color 0.3s;
+        }
+        .btn-secondary:hover { border-color: #52bbaD; color: #52bbaD; }
+        .contact-info {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 24px 32px;
+            max-width: 600px;
+            width: 100%;
+        }
+        .contact-info h3 { color: #52bbaD; margin-bottom: 16px; font-size: 18px; }
+        .contact-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #a0b4c8;
+        }
+        .contact-row strong { color: #fff; min-width: 80px; }
+        .nav-links {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 20px;
+            z-index: 10;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: #52bbaD; }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #4a6a80;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-links">
+        <a href="blue-spark-business-technology-about.html">About</a>
+        <a href="blue-spark-business-technology-solutions.html">Solutions</a>
+        <a href="blue-spark-business-technology-contact.html">Contact</a>
+    </div>
+
+    <div class="hero">
+        <div class="logo-section">
+            <svg viewBox="0 0 277 84" xmlns="http://www.w3.org/2000/svg" style="max-width:280px">
+                <desc>Arcane Technologies PLC</desc>
+                <text x="0" y="60" fill="#52bbaD" font-family="Segoe UI,Arial" font-size="42" font-weight="700">ARCANE</text>
+                <text x="0" y="78" fill="#fff" font-family="Segoe UI,Arial" font-size="14" letter-spacing="3">TECHNOLOGIES PLC</text>
+            </svg>
+        </div>
+
+        <p class="tagline">Digital Financial Services &amp; Distribution</p>
+
+        <h1>Powering Ethiopia's Markets Through <span>Technology</span> &amp; <span>Distribution</span></h1>
+
+        <p class="subtitle">We are an authorized Super Agent for CBE Birr, a certified partner for Safaricom Ethiopia, and a trusted distributor of FMCG and telecom products across Ethiopia.</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Digital Financial Services</h3>
+                <p>As a CBE Birr Super Agent, we provide eKYC registration, agent network development, merchant distribution, and platform integration services. We also support Safaricom Ethiopia with rollout operations.</p>
+            </div>
+            <div class="service-card">
+                <h3>FMCG Distribution</h3>
+                <p>We distribute Dachi (American Garden), Lilac Ethiopia (diapers & sanitary products), and Elleni cornflakes — bringing top consumer brands to markets across Ethiopia.</p>
+            </div>
+            <div class="service-card">
+                <h3>Telecom Products & Services</h3>
+                <p>As partners of Ethio Telecom and Safaricom, we distribute SIM cards, airtime, routers, MiFi devices, and offer corporate telecom plans to businesses nationwide.</p>
+            </div>
+            <div class="service-card">
+                <h3>Lighting & Technology</h3>
+                <p>We supply Philips LED lighting solutions and solar LED products, along with integrated video surveillance systems, access control, and enterprise SFA/CRM software.</p>
+            </div>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="blue-spark-business-technology-contact.html" class="btn-primary">Contact Us</a>
+            <a href="blue-spark-business-technology-solutions.html" class="btn-secondary">Our Solutions</a>
+        </div>
+
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <div class="contact-row"><strong>Email:</strong> gme@arcaneplc.com</div>
+            <div class="contact-row"><strong>Phone:</strong> +251 927 358 579 / +251 799 100 188</div>
+            <div class="contact-row"><strong>Web:</strong> www.arcaneplc.com</div>
+            <div class="contact-row"><strong>Address:</strong> Tegene Building, 5th Floor, Addis Ababa, Ethiopia</div>
+        </div>
+    </div>
+
+    <footer>
+        © 2026 Arcane Technologies PLC · Addis Ababa, Ethiopia · www.arcaneplc.com
+    </footer>
+
+</body>
+</html>
