@@ -3,202 +3,884 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Arcane Technologies PLC - Digital Financial Services & Distribution in Ethiopia. CBE Birr Super Agent, Safaricom Partner, FMCG Distribution, Telecom Products.">
-    <title>Arcane Technologies PLC - Digital Financial Services & Distribution</title>
+    <meta name="description" content="Arcane Technologies PLC - Digital Financial Services, Distribution & Technology Solutions in Ethiopia. CBE Birr Super Agent, Safaricom Partner.">
+    <title>Arcane Technologies PLC | Digital Financial Services & Distribution</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #0a1628;
-            color: #fff;
-            min-height: 100vh;
+        :root {
+            --primary: #0F4C81;
+            --accent: #2ECC71;
+            --dark: #0a1628;
+            --light: #F8FAFC;
+            --gray: #64748B;
+            --border: #E2E8F0;
         }
-        .hero {
-            min-height: 100vh;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--light);
+            color: #1E293B;
+            line-height: 1.6;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 0 40px;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+        .nav-logo {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0a1628 100%);
+            line-height: 1.1;
         }
-        .logo-section { margin-bottom: 30px; }
-        .logo-section svg { max-width: 280px; height: auto; }
-        .tagline {
-            font-size: 14px;
-            letter-spacing: 3px;
+        .nav-logo strong {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+        .nav-logo span {
+            font-size: 10px;
+            font-weight: 500;
+            color: var(--gray);
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: #52bbaD;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray);
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links .btn-nav {
+            background: var(--primary);
+            color: #fff !important;
+            padding: 9px 22px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .nav-links .btn-nav:hover { background: #0d3660; }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* HERO */
+        .hero {
+            padding: 160px 40px 100px;
+            background: var(--dark);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(46,204,113,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(15,76,129,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(46,204,113,0.12);
+            border: 1px solid rgba(46,204,113,0.3);
+            color: #2ECC71;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: #2ECC71;
+            border-radius: 50%;
+        }
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
             margin-bottom: 20px;
         }
-        h1 {
-            font-size: clamp(28px, 5vw, 52px);
+        .hero h1 .accent { color: #2ECC71; }
+        .hero p {
+            font-size: 18px;
+            color: #94A3B8;
+            line-height: 1.7;
+            margin-bottom: 36px;
+            max-width: 500px;
+        }
+        .hero-ctas {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #2ECC71;
+            color: #0a1628;
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
             font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            max-width: 800px;
+            font-size: 15px;
+            transition: all 0.2s;
         }
-        h1 span { color: #52bbaD; }
-        .subtitle {
-            font-size: clamp(16px, 2.5vw, 20px);
-            color: #a0b4c8;
+        .btn-primary:hover { background: #27ae60; transform: translateY(-1px); }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.2s;
+        }
+        .btn-outline:hover { border-color: #2ECC71; color: #2ECC71; }
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .stat h3 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2ECC71;
+        }
+        .stat p {
+            font-size: 13px;
+            color: #64748B;
+            margin: 0;
+        }
+        .hero-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .service-preview-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.2s;
+        }
+        .service-preview-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(46,204,113,0.3);
+        }
+        .service-preview-card .icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(46,204,113,0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        .service-preview-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .service-preview-card p {
+            font-size: 13px;
+            color: #64748B;
+            margin: 0;
+        }
+
+        /* SECTION STYLES */
+        section { padding: 100px 40px; }
+        .section-inner { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #2ECC71;
+            margin-bottom: 16px;
+        }
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+        .section-subtitle {
+            font-size: 17px;
+            color: var(--gray);
             max-width: 600px;
-            line-height: 1.6;
-            margin-bottom: 40px;
+            line-height: 1.7;
         }
+
+        /* SERVICES */
+        .services-section { background: #fff; }
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
-            max-width: 900px;
-            width: 100%;
-            margin-bottom: 40px;
+            margin-top: 60px;
         }
         .service-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(82,187,173,0.3);
-            border-radius: 12px;
-            padding: 28px 24px;
-            text-align: left;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px 28px;
+            transition: all 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), #2ECC71);
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 40px rgba(15,76,129,0.1);
+            transform: translateY(-3px);
+        }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(15,76,129,0.08), rgba(46,204,113,0.08));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            margin-bottom: 20px;
         }
         .service-card h3 {
-            color: #52bbaD;
             font-size: 18px;
-            margin-bottom: 12px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #0F4C81;
         }
         .service-card p {
             font-size: 14px;
-            color: #a0b4c8;
-            line-height: 1.6;
+            color: var(--gray);
+            line-height: 1.7;
         }
-        .cta-buttons {
+        .service-card .tag {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 4px 10px;
+            background: rgba(15,76,129,0.06);
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* ABOUT / WHY US */
+        .about-section {
+            background: var(--light);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .about-text p {
+            font-size: 16px;
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .about-text strong { color: #1E293B; }
+        .feature-list {
+            list-style: none;
+            margin-top: 24px;
+        }
+        .feature-list li {
             display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+        .feature-list .check {
+            width: 22px;
+            height: 22px;
+            background: rgba(46,204,113,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 12px;
+            color: #2ECC71;
+        }
+        .about-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 16px;
+        }
+        .about-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+        }
+        .about-card .number {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .about-card .number span { color: #2ECC71; }
+        .about-card p {
+            font-size: 13px;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        /* PARTNERS */
+        .partners-section {
+            background: #fff;
+            padding: 60px 40px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .partners-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .partners-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        .partners-grid {
+            display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 40px;
+            gap: 40px;
+            align-items: center;
         }
-        .btn-primary {
-            background: #52bbaD;
-            color: #0a1628;
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-        .btn-primary:hover { background: #3d9e91; }
-        .btn-secondary {
-            background: transparent;
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
+        .partner-tag {
+            padding: 10px 24px;
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 14px;
             font-weight: 600;
+            color: var(--gray);
+            transition: all 0.2s;
+        }
+        .partner-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(15,76,129,0.04);
+        }
+
+        /* CTA */
+        .cta-section {
+            background: var(--dark);
+            color: #fff;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        .cta-section h2 .accent { color: #2ECC71; }
+        .cta-section p {
+            font-size: 18px;
+            color: #94A3B8;
+            max-width: 500px;
+            margin: 0 auto 36px;
+        }
+        .cta-section .btn-primary {
             font-size: 16px;
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: border-color 0.3s;
+            padding: 16px 36px;
         }
-        .btn-secondary:hover { border-color: #52bbaD; color: #52bbaD; }
-        .contact-info {
-            background: rgba(255,255,255,0.05);
+
+        /* CONTACT */
+        .contact-section { background: var(--light); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+        }
+        .contact-info-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px;
+        }
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 28px;
+            align-items: flex-start;
+        }
+        .contact-item:last-child { margin-bottom: 0; }
+        .contact-item .ci-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, rgba(15,76,129,0.08), rgba(46,204,113,0.08));
             border-radius: 12px;
-            padding: 24px 32px;
-            max-width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .contact-item h4 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            margin-bottom: 4px;
+        }
+        .contact-item p {
+            font-size: 16px;
+            font-weight: 500;
+            color: #1E293B;
+        }
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .contact-item a:hover { text-decoration: underline; }
+        .contact-form {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
             width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #1E293B;
+            background: var(--light);
+            transition: border-color 0.2s;
         }
-        .contact-info h3 { color: #52bbaD; margin-bottom: 16px; font-size: 18px; }
-        .contact-row {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 10px;
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .btn-submit {
+            width: 100%;
+            background: var(--primary);
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+        .btn-submit:hover { background: #0d3660; }
+
+        /* FOOTER */
+        footer {
+            background: #0a1628;
+            color: #94A3B8;
+            padding: 60px 40px 30px;
+        }
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+        .footer-brand strong {
+            display: block;
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+        .footer-brand .sub {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #2ECC71;
+            margin-bottom: 16px;
+        }
+        .footer-brand p {
             font-size: 14px;
-            color: #a0b4c8;
+            line-height: 1.7;
+            max-width: 280px;
         }
-        .contact-row strong { color: #fff; min-width: 80px; }
-        .nav-links {
-            position: fixed;
-            top: 20px;
-            right: 30px;
-            display: flex;
-            gap: 20px;
-            z-index: 10;
+        .footer-col h4 {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 20px;
         }
-        .nav-links a {
-            color: rgba(255,255,255,0.7);
+        .footer-col a {
+            display: block;
+            color: #94A3B8;
             text-decoration: none;
             font-size: 14px;
-            transition: color 0.3s;
+            margin-bottom: 12px;
+            transition: color 0.2s;
         }
-        .nav-links a:hover { color: #52bbaD; }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 12px;
-            color: #4a6a80;
-            border-top: 1px solid rgba(255,255,255,0.05);
+        .footer-col a:hover { color: #2ECC71; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-inner,
+            .about-grid,
+            .contact-grid,
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero { padding: 120px 20px 60px; }
+            section { padding: 60px 20px; }
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero-stats { gap: 24px; flex-wrap: wrap; }
+            .about-cards { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <div class="nav-links">
-        <a href="about.html">About</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="contact.html">Contact</a>
-    </div>
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <strong>ARCANE</strong>
+                <span>Technologies PLC</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="solutions.html">Solutions</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="btn-nav">Get in Touch</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</button>
+        </div>
+    </nav>
 
+    <!-- HERO -->
     <div class="hero">
-        <div class="logo-section">
-            <svg viewBox="0 0 277 84" xmlns="http://www.w3.org/2000/svg" style="max-width:280px">
-                <text x="0" y="60" fill="#52bbaD" font-family="Segoe UI,Arial" font-size="42" font-weight="700">ARCANE</text>
-                <text x="0" y="78" fill="#fff" font-family="Segoe UI,Arial" font-size="14" letter-spacing="3">TECHNOLOGIES PLC</text>
-            </svg>
-        </div>
-
-        <p class="tagline">Digital Financial Services &amp; Distribution</p>
-
-        <h1>Powering Ethiopia's Markets Through <span>Technology</span> &amp; <span>Distribution</span></h1>
-
-        <p class="subtitle">We are an authorized Super Agent for CBE Birr, a certified partner for Safaricom Ethiopia, and a trusted distributor of FMCG and telecom products across Ethiopia.</p>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Digital Financial Services</h3>
-                <p>As a CBE Birr Super Agent, we provide eKYC registration, agent network development, merchant distribution, and platform integration services. We also support Safaricom Ethiopia with rollout operations.</p>
+        <div class="hero-inner">
+            <div>
+                <div class="hero-badge"><div class="dot"></div>CBE Birr Authorized Super Agent</div>
+                <h1>
+                    Powering Ethiopia's Markets Through <span class="accent">Technology</span> &amp; <span class="accent">Distribution</span>
+                </h1>
+                <p>Arcane Technologies PLC is a digital financial services specialist and distribution company registered in Ethiopia since 2021. We connect businesses and communities through innovative financial services, trusted brands, and reliable technology solutions.</p>
+                <div class="hero-ctas">
+                    <a href="contact.html" class="btn-primary">Contact Us →</a>
+                    <a href="solutions.html" class="btn-outline">Our Solutions</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>2021</h3>
+                        <p>Founded</p>
+                    </div>
+                    <div class="stat">
+                        <h3>5+</h3>
+                        <p>Brand Partners</p>
+                    </div>
+                    <div class="stat">
+                        <h3>3</h3>
+                        <p>Business Verticals</p>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>FMCG Distribution</h3>
-                <p>We distribute Dachi (American Garden), Lilac Ethiopia (diapers &amp; sanitary products), and Elleni cornflakes — bringing top consumer brands to markets across Ethiopia.</p>
+            <div class="hero-visual">
+                <div class="service-preview-card">
+                    <div class="icon">🏦</div>
+                    <div>
+                        <h4>Digital Financial Services</h4>
+                        <p>CBE Birr Super Agent · eKYC Registration · Agent Network Development</p>
+                    </div>
+                </div>
+                <div class="service-preview-card">
+                    <div class="icon">📦</div>
+                    <div>
+                        <h4>FMCG Distribution</h4>
+                        <p>Dachi · Lilac Ethiopia · Elleni Cornflakes across Ethiopia</p>
+                    </div>
+                </div>
+                <div class="service-preview-card">
+                    <div class="icon">📱</div>
+                    <div>
+                        <h4>Telecom Products</h4>
+                        <p>Safaricom &amp; Ethio Telecom · SIMs · Airtime · Routers · MiFi</p>
+                    </div>
+                </div>
+                <div class="service-preview-card">
+                    <div class="icon">💡</div>
+                    <div>
+                        <h4>Lighting &amp; Technology</h4>
+                        <p>Philips LED · Solar LED · Surveillance · SFA/CRM Software</p>
+                    </div>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>Telecom Products &amp; Services</h3>
-                <p>As partners of Ethio Telecom and Safaricom, we distribute SIM cards, airtime, routers, MiFi devices, and offer corporate telecom plans to businesses nationwide.</p>
-            </div>
-            <div class="service-card">
-                <h3>Lighting &amp; Technology</h3>
-                <p>We supply Philips LED lighting solutions and solar LED products, along with integrated video surveillance systems, access control, and enterprise SFA/CRM software.</p>
-            </div>
-        </div>
-
-        <div class="cta-buttons">
-            <a href="contact.html" class="btn-primary">Contact Us</a>
-            <a href="solutions.html" class="btn-secondary">Our Solutions</a>
-        </div>
-
-        <div class="contact-info">
-            <h3>Get in Touch</h3>
-            <div class="contact-row"><strong>Email:</strong> gme@arcaneplc.com</div>
-            <div class="contact-row"><strong>Phone:</strong> +251 927 358 579 / +251 799 100 188</div>
-            <div class="contact-row"><strong>Web:</strong> www.arcaneplc.com</div>
-            <div class="contact-row"><strong>Address:</strong> Tegene Building, 5th Floor, Addis Ababa, Ethiopia</div>
         </div>
     </div>
 
+    <!-- SERVICES -->
+    <section class="services-section">
+        <div class="section-inner">
+            <div class="section-label">What We Do</div>
+            <h2 class="section-title">Three Business Verticals,<br>One Trusted Partner</h2>
+            <p class="section-subtitle">From digital finance to consumer goods distribution, we deliver integrated solutions that power businesses across Ethiopia.</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏦</div>
+                    <h3>Digital Financial Services</h3>
+                    <p>As an authorized CBE Birr Super Agent and certified Safaricom Ethiopia partner, we provide end-to-end digital financial services including eKYC registration, agent network development, merchant distribution, and platform integration across Addis Ababa and regional Ethiopia.</p>
+                    <span class="tag">eKYC · Agent Network · Merchant Services</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>FMCG Distribution</h3>
+                    <p>We distribute a portfolio of trusted consumer brands including Dachi (American Garden), Lilac Ethiopia (diapers and sanitary products), and Elleni cornflakes — reaching markets nationwide through an established distribution network.</p>
+                    <span class="tag">Dachi · Lilac · Elleni</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Telecom Products &amp; Services</h3>
+                    <p>As authorized partners of Ethio Telecom and Safaricom, we distribute SIM cards, airtime, routers, and MiFi devices. We also provide corporate telecom plans and recharge distribution services for businesses and agents.</p>
+                    <span class="tag">SIMs · Airtime · Routers · MiFi</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Lighting &amp; Technology</h3>
+                    <p>We supply Philips LED lighting solutions and solar LED products for homes and businesses. Our technology offerings also include integrated video surveillance systems, access control, and our own enterprise SFA/CRM software with Route-to-Market services.</p>
+                    <span class="tag">Philips LED · Surveillance · SFA/CRM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <div class="partners-section">
+        <div class="partners-inner">
+            <div class="partners-label">Trusted Partners &amp; Brands</div>
+            <div class="partners-grid">
+                <div class="partner-tag">CBE Birr</div>
+                <div class="partner-tag">Safaricom Ethiopia</div>
+                <div class="partner-tag">Ethio Telecom</div>
+                <div class="partner-tag">Dachi / American Garden</div>
+                <div class="partner-tag">Lilac Ethiopia</div>
+                <div class="partner-tag">Elleni</div>
+                <div class="partner-tag">Philips</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about-section">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="about-text">
+                    <div class="section-label">About Us</div>
+                    <h2 class="section-title">A Technology Partner Built for Ethiopia's Growing Markets</h2>
+                    <p>Arcane Technologies PLC was established in 2021 in Addis Ababa with a clear mission: to bridge the gap between innovative financial services, quality consumer products, and the businesses and communities that need them most.</p>
+                    <p>Registered in Ethiopia and operating across Addis Ababa, Oromia, and Southern Ethiopia, we have grown into a trusted partner for both multinational brands and local enterprises.</p>
+                    <ul class="feature-list">
+                        <li><div class="check">✓</div><div><strong>Authorized CBE Birr Super Agent</strong> — certified for eKYC, agent recruitment, and merchant operations</div></li>
+                        <li><div class="check">✓</div><div><strong>Safaricom Ethiopia Partner</strong> — supporting SIM distribution and service rollout</div></li>
+                        <li><div class="check">✓</div><div><strong>Multibrand FMCG Distribution</strong> — Dachi, Lilac, Elleni across Ethiopia</div></li>
+                        <li><div class="check">✓</div><div><strong>Enterprise Technology</strong> — Philips LED, surveillance systems, SFA/CRM software</div></li>
+                    </ul>
+                </div>
+                <div class="about-cards">
+                    <div class="about-card">
+                        <div class="number">5<span>+</span></div>
+                        <p>Years operating in Ethiopia's distribution and technology sector</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="number">3</div>
+                        <p>Business verticals covering finance, distribution, and technology</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="number">78<span>+</span></div>
+                        <p>Branches supported during Safaricom eKYC rollout</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="number">3<span>+</span></div>
+                        <p>Regions covered: Addis Ababa, Oromia, Southern Ethiopia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="section-inner" style="text-align:center">
+            <h2>Ready to <span class="accent">Partner</span> with Us?</h2>
+            <p>Whether you're looking for digital financial services, distribution for your brand, or technology solutions — we'd love to hear from you.</p>
+            <a href="contact.html" class="btn-primary">Get in Touch →</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        © 2026 Arcane Technologies PLC · Addis Ababa, Ethiopia · www.arcaneplc.com
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="sub">Technologies PLC</div>
+                    <strong>Arcane Technologies</strong>
+                    <p>A digital financial services specialist and distribution company based in Addis Ababa, Ethiopia. Connecting businesses through technology and trusted brands since 2021.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="solutions.html">Digital Finance</a>
+                    <a href="solutions.html">FMCG Distribution</a>
+                    <a href="solutions.html">Telecom Products</a>
+                    <a href="solutions.html">Lighting & Tech</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="tel:+251927358579">+251 927 358 579</a>
+                    <a href="tel:+251799100188">+251 799 100 188</a>
+                    <a href="mailto:gme@arcaneplc.com">gme@arcaneplc.com</a>
+                    <a href="#">Tegene Building, 5th Floor<br>Addis Ababa, Ethiopia</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Arcane Technologies PLC. All rights reserved.</span>
+                <span>www.arcaneplc.com</span>
+            </div>
+        </div>
     </footer>
 
 </body>
